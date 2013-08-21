@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#    474 - minimalistic roguelike.
+#    RogueNano - minimalistic roguelike.
 #    Copyright (c) init
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 
 
 use Curses;
-$q=80*24;
+$q=1920;
 @m=(-1,0,80,-80,1);
 
 sub r{rand$_[0]}
