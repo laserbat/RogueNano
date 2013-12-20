@@ -15,44 +15,28 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 use Curses;
-$q=1920;
-@m=(-1,0,80,-80,1);
-
-sub r{rand$_[0]}
 
 sub a{
-        my@l;
-        for(0..99){
-                for$v(0..$q){
-                        if(($v%80-$n%80)**2+(($v-$n)/80)**2<25){
-                                $l[$v]=1;
-                                $p=$v,$l[$v]=4if(r 99)<1
-                        }
-                }
-                $n=$p+r 4
-        }
-        
-        1until$l[$v=r$q]&$l[$p=r$q];
+        @l=0*initscr;
 
-        while($l[$v]=2){
-                addch($_/80,$_%80,$_^$p?("#",".",">",0,B)[$l[$_]]:"@")for 0..$q;
+        map{
+                ($_%80-$n%80)**2+abs($_-$n)/80<6?$l[$_]=rand 99<2?4%~($p=$_):1:0for@w,$n=$p+$n%4
+        }0..99;
 
-                $p=$l[$z=$p+$m[ord(getch)-104]]&3?$z:$p;
-                $l[$z]=1if$l[$z]&4;
-                a()if$l[$p]&2;
-                
-                for$v(0..$q){
-                        if($l[$v]&4){
-                                $l[$v]=1;
-                                $n=$v+$m[r 5];
-                                $l[$l[$n]&1&&$n^$p&&$l[$n]<3?$n:$v]=9
-                        }
-                }
-                
-                $_=$_>3?4:$_ for@l
-        }
+        1until$l[$v=rand@w]&$l[$p=rand@w]
 }
 
-a initscr
+for(@w=0..1920;@m=(-1,0,80,-80,1);$l[$v]=2){
+
+        addch$_/80,$_%80,$_^$p?("#",".",">",0,B)[$l[$_]]:"@"for@w;
+
+        $p=$l[$z=$p+$m[ord(getch)-104]]&3?$z:$p;
+        
+        $l[$z]%=3;
+        a if$l[$p]&2;
+        
+        $l[$_]&4?$l[$l[$n]&1&&$n^$p&&$l[$n]<3?$n:$_]=9|($n=$_+$m[rand 4+($l[$_]=1)]):0 for@w;
+        
+        $_=$_>3?4:$_ for@l
+}
