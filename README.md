@@ -5,6 +5,13 @@ A 400 characters long rougelike, written in perl, based on libcurses-perl
 
 See game.pl for minified code and readable.pl for annotated version.
 
+How to run
+---
+```shell
+sudo apt install libcurses-perl
+stty rows 80 && ./game.pl && stty normal
+```
+
 Features:
 ---
 
