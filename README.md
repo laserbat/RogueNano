@@ -1,6 +1,17 @@
 RogueNano
 ===
 
-~~473~~ ~~425~~ 400 characters long rougelike, written in perl.
-* _rl.pl_ - final and playable version of roguelike.
-* _rl_readable.pl_ - same as _rl.pl_ but a little bit more readable.
+A 400 characters long rougelike, written in perl, based on libcurses-perl
+
+See game.pl for minified code and readable.pl for annotated version.
+
+Features:
+---
+
+* Vi-keys movement (diagonal movement is not implemented)
+* Random level generation
+* Monsters with basic 'AI', you can kill them too
+* Infinite levels!
+* Only 80x25 terminals supported
+* Requires libcurses-perl package to be installed
+* Licensed under WTFPL
