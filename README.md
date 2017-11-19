@@ -13,5 +13,5 @@ Features:
 * Monsters with basic 'AI', you can kill them too
 * Infinite levels!
 * Only 80x25 terminals supported
-* Requires libcurses-perl package to be installed
+* Requires libcurses-perl package to work
 * Licensed under WTFPL
