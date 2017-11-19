@@ -9,7 +9,7 @@ How to run
 ---
 ```shell
 sudo apt install libcurses-perl
-stty rows 80 && ./game.pl && stty normal
+stty cols 80; ./game.pl
 ```
 
 Features:
