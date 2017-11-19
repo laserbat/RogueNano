@@ -4,6 +4,10 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
+# Please excuse English used in these annotations. I wrote them a long time ago
+# in a big hurry, and my English was way wore back then.
+
+# Curses module, used for terminal I/O
 use Curses;
  
 # Important variables:
