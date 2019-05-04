@@ -1,11 +1,17 @@
 #!/usr/bin/perl
-# Copyright © 2017 Olga Ustuzhanina <me@laserbat.pw>
-# This work is free. You can redistribute it and/or modify it under the
-# terms of the Do What The Fuck You Want To Public License, Version 2,
-# as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
+#
+#
+# Copyright © 2019 Olga Ustiuzhanina <me@laserbat.pw>
+#
+# This program is free software. It comes without any warranty, to
+# the extent permitted by applicable law. You can redistribute it
+# and/or modify it under the terms of the Do What The Fuck You Want
+# To Public License, Version 2, as published by Sam Hocevar. See
+# the COPYING file for more details.
+#
 
 # Please excuse English used in these annotations. I wrote them a long time ago
-# in a big hurry, and my English was way wore back then.
+# in a big hurry, and my English was way worse back then.
 
 # Curses module, used for terminal I/O
 use Curses;
@@ -59,7 +65,7 @@ for(
  
    # Since monsters are represented by value 4, and 4 % 3 == 1 (floor tile)
    # it creates a floor tile in place where monster used to be when player
-   # moves into a montser.
+   # moves into a monster.
  
    $l[$z] %= 3;
  
@@ -99,8 +105,8 @@ for(
             # more random.
          }  0..99;
  
-         # Do nothing untill random values for $v (position of stairs) and $p
-         # (position of player) are found and are both on unocuppied tiles.
+         # Do nothing until random values for $v (position of stairs) and $p
+         # (position of player) are found and are both on unoccupied tiles.
          1 until $l[$v = rand @w] & $l[$p = rand @w]
       }
  
